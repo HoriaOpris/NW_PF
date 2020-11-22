@@ -1,13 +1,10 @@
 #include<iostream>
-#include<fstream>
-#include<string>
+#include"io.h"
 
 using namespace std;
 
 int main(void)
 {
-	ofstream file;
-	file.open("test.txt");
 	auto in = 0.0;
 	auto cu = 0.0;
 	char save; 
@@ -22,9 +19,10 @@ int main(void)
 	cin >> save;
 	
 	if(save == 'y')
-		file << in + cu;
-	
-	file.close();	
-	
+	{
+		File f;
+		f.save(in + cu);
+	}
+
 	return 0;
 }
