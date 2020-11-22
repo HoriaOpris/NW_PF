@@ -1,14 +1,14 @@
-#include"iostream"
+#include<iostream>
+#include<fstream>
+#include<string>
 
 int main(void)
 {
-	FILE *f =  fopen("lloyds.csv", "r");
-	char buff[255];
-	
-	fgets(buff, 255, f);
-	printf("%s", buff);
-
-  	fclose(f);
-  
+	std::ifstream file("lloyds.csv");
+ 	std::string buf((std::istreambuf_iterator<char>(file)),
+                       (std::istreambuf_iterator<char>()));
+                       
+	std::cout << buf;
+ 
 	return 0;
 }
